@@ -28,18 +28,30 @@ Feature: Testing weather API
     When we getting weather from server
     Then visibility is 10000
 
-  Scenario: Other tests
+  Scenario: Wind tests
     When we getting weather from server
     Then speed is 4.1
     And deg is 80
-    And all is 90
-    And dt is 1485789600
-    And type is 1
+
+  Scenario: Cloud tests
+    When we getting weather from server
+    Then all is 90
+
+  Scenario: Dt tests
+    When we getting weather from server
+    Then dt is 1485789600
+
+  Scenario: Sys tests
+    When we getting weather from server
+    Then type is 1
     And sys.id is 5091
     And message is 0.0103
     And country is GB
     And sunrise is 1485762037
     And sunset is 1485794875
-    And id is 2643743
+
+  Scenario: Other tests
+    When we getting weather from server
+    Then id is 2643743
     And name is London
     And cod is 200
