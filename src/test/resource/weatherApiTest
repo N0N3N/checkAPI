@@ -1,20 +1,36 @@
 Feature: Testing weather API
-  Scenario: API test
+
+  Scenario: Coordinates test
     When we getting weather from server
     Then lon is -0.13
     And lat is 51.51
-    And weather.id is 300
+
+  Scenario: Weather test
+    When we getting weather from server
+    Then weather.id is 300
     And main is Drizzle
     And description is light intensity drizzle
     And icon is 09d
-    And base is stations
-    And temp is 280.32
+
+  Scenario: Base test
+    When we getting weather from server
+    Then base is stations
+
+  Scenario: Main test
+    When we getting weather from server
+    Then temp is 280.32
     And pressure is 1012
     And humidity is 81
     And temp_min is 279.15
     And temp_max is 281.15
-    And visibility is 10000
-    And speed is 4.1
+
+  Scenario: Visibility test
+    When we getting weather from server
+    Then visibility is 10000
+
+  Scenario: Other tests
+    When we getting weather from server
+    Then speed is 4.1
     And deg is 80
     And all is 90
     And dt is 1485789600
